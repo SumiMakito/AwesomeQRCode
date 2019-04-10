@@ -155,7 +155,7 @@ color.auto = false // set to true to automatically pick out colors from the back
 ```java
 // Java
 
-Color color = new Color(); 
+ColorQR color = new ColorQR();
 color.setLight(0xFFFFFFFF); // for blank spaces
 color.setDark(0xFFFF8C8C); // for non-blank spaces
 color.setBackground(0xFFFFFFFF); // for the background (will be overriden by background images, if set)
@@ -234,6 +234,26 @@ try {
 } catch (e: Exception) {
     e.printStackTrace()
     // Oops, something gone wrong.
+}
+```
+
+```java
+// Java
+try {
+    RenderResult render = AwesomeQrRenderer.render(renderOption);
+    if (render.getBitmap() != null) {
+        // play with the bitmap
+    } else if (render.getType() == RenderResult.OutputType.GIF){
+        // If your Background is a GifBackground, the image
+        // will be saved to the output file set in GifBackground
+        // instead of being returned here. As a result, the
+        // result.bitmap will be null.
+    }
+    else {
+        // Oops, something gone wrong.
+    }
+} catch (Exception e) {
+    e.printStackTrace();
 }
 ```
 
