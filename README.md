@@ -155,7 +155,7 @@ color.auto = false // set to true to automatically pick out colors from the back
 ```java
 // Java
 
-Color color = new Color(); 
+ColorQR color = new ColorQR();
 color.setLight(0xFFFFFFFF); // for blank spaces
 color.setDark(0xFFFF8C8C); // for non-blank spaces
 color.setBackground(0xFFFFFFFF); // for the background (will be overriden by background images, if set)
